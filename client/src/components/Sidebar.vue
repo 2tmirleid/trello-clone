@@ -1,7 +1,7 @@
 <template>
   <section class="sidebar">
     <div class="logo">
-      <img src="@/public/sidebar/logo.svg" alt="">
+      <img src="@/public/sidebar/logo.svg" alt="Trello Clone">
 
       <h1>Trello Clone</h1>
     </div>
@@ -14,7 +14,7 @@
             :key="index"
         >
           <a :href="option.link">
-            <img :src="option.img" alt="">
+            <img :src="option.img" :alt="option.title">
 
             <h2>{{ option.title }}</h2>
           </a>
@@ -53,7 +53,7 @@ import settings from '@/public/sidebar/settings.svg';
 export default {
   data() {
     return {
-      isAuth: false,
+      isAuth: true,
       options: [
         {
           link: 'dashboard',
