@@ -13,7 +13,17 @@
           class="notifications"
           href="#"
       >
-        <img src="@/public/header/notifications.svg" alt="notifications">
+        <img
+            v-if="!notifications"
+            src="@/public/header/notifications.svg"
+            alt="notifications"
+        >
+
+        <img
+            v-else
+            src="@/public/header/notifications_alert.svg"
+            alt="notifications"
+        >
       </a>
 
       <a
@@ -46,6 +56,7 @@
 export default {
   data() {
     return {
+      notifications: false,
       isAuth: false,
     }
   },
