@@ -6,5 +6,5 @@
           stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 
     <!-- Красная точка уведомления -->
-    <circle cx="15" cy="5" r="3" fill="#FF0000" stroke="white" stroke-width="0.5"/>
+    <circle cx="15" cy="5" r="3" fill="#FF0000" stroke="none" stroke-width="0.5"/>
 </svg>

@@ -56,7 +56,7 @@
 export default {
   data() {
     return {
-      notifications: false,
+      notifications: true,
       isAuth: false,
     }
   },

@@ -12,6 +12,7 @@
             class="option"
             v-for="(option, index) in options"
             :key="index"
+            :class="{ 'active' : activeOption === index}"
         >
           <a :href="option.link">
             <img :src="option.img" :alt="option.title">
@@ -53,6 +54,7 @@ import settings from '@/public/sidebar/settings.svg';
 export default {
   data() {
     return {
+      activeOption: 1,
       isAuth: true,
       options: [
         {
@@ -76,6 +78,11 @@ export default {
           title: 'Settings'
         },
       ]
+    }
+  },
+  methods: {
+    makeOptionActive(index) {
+      this.activeOption = index;
     }
   }
 }
@@ -120,10 +127,17 @@ export default {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    gap: 37px;
+    gap: 28px;
 
     .option {
+      padding-left: 43px;
+      padding-right: 52px;
+      height: 43px;
+      display: flex;
+      align-items: center;
+
       a {
+        width: 100%;
         display: flex;
         gap: 16px;
         text-decoration: none;
@@ -139,6 +153,9 @@ export default {
   }
 
   .auth {
+    display: flex;
+    justify-content: center;
+
     a {
       display: flex;
       gap: 20px;
@@ -152,5 +169,13 @@ export default {
       color: #000000;
     }
   }
+}
+
+.active {
+  background-color: #edf5fe;
+}
+
+.option.active a h2 {
+  color: #000000 !important;
 }
 </style>
